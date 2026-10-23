@@ -1,26 +1,187 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
+/* Design tokens */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@theme {
+  /* Deep navy text scale */
+  --color-ink-950: #071226;
+  --color-ink-900: #0b1a33;
+  --color-ink-800: #1b2a45;
+  --color-ink-700: #33425e;
+  --color-ink-600: #4a5873;
+  --color-ink-500: #5d6a82;
+  --color-ink-300: #a9b3c4;
+
+  /* Electric blue accent. 600+ passes 4.5:1 for text on white and canvas;
+     500 is for large shapes and decoration only. */
+  --color-brand-50: #eef3ff;
+  --color-brand-100: #dce6ff;
+  --color-brand-200: #b8ccff;
+  --color-brand-400: #5c8dff;
+  --color-brand-500: #2f6bff;
+  --color-brand-600: #1f4fd6;
+  --color-brand-700: #1a42b5;
+
+  /* Lavender secondary accent. Use sparingly: highlights, small details. */
+  --color-lilac-50: #f3f0fe;
+  --color-lilac-100: #e7e1fd;
+  --color-lilac-300: #c3b6f7;
+  --color-lilac-400: #a08ef0;
+  --color-lilac-600: #5b45c8;
+
+  /* Warm neutral surfaces and lines */
+  --color-canvas: #fcfbf8; /* page background */
+  --color-paper: #ffffff; /* cards, inputs */
+  --color-surface: #f4f2ec; /* subtle panels and section bands */
+  --color-line: #e7e3da;
+  --color-line-strong: #d3cdc0;
+
+  --color-danger-50: #fef2f2;
+  --color-danger-600: #b42318;
+  --color-warning-50: #fffaeb;
+  --color-warning-500: #f79009;
+  --color-warning-700: #93370d;
+  --color-success-50: #ecfdf3;
+  --color-success-700: #067647;
+
+  --shadow-card: 0 1px 2px rgb(11 26 51 / 0.04), 0 1px 3px rgb(11 26 51 / 0.06);
+  --shadow-card-hover: 0 8px 20px -6px rgb(31 79 214 / 0.18), 0 2px 4px rgb(11 26 51 / 0.05);
+
+  --radius-card: 1rem;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-canvas);
+  color: var(--color-ink-900);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: var(--color-brand-100);
+  color: var(--color-ink-950);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand-600);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .card {
+    @apply rounded-2xl border border-line bg-paper shadow-(--shadow-card);
+  }
+
+  .btn {
+    @apply inline-flex min-h-10 items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold transition-colors duration-150 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  /* Use together with .btn, e.g. class="btn btn-primary" */
+  .btn-primary {
+    @apply bg-brand-600 text-white hover:bg-brand-700;
+  }
+  .btn-secondary {
+    @apply border border-line-strong bg-paper text-ink-900 hover:border-ink-300 hover:bg-surface;
+  }
+  .btn-ghost {
+    @apply text-ink-700 hover:bg-surface hover:text-ink-900;
+  }
+
+  .field-label {
+    @apply mb-1.5 block text-sm font-medium text-ink-800;
+  }
+  .field-input {
+    @apply block w-full rounded-lg border border-line-strong bg-paper px-3 py-2 text-base text-ink-900 placeholder:text-ink-500 transition-colors focus:border-brand-600 focus:ring-2 focus:ring-brand-600/20 focus:outline-none aria-invalid:border-danger-600 sm:text-sm;
+  }
+  .field-hint {
+    @apply mt-1.5 text-sm text-ink-600;
+  }
+
+  .eyebrow {
+    @apply text-sm font-semibold tracking-wide text-brand-600 uppercase;
+  }
+
+  /* Long-form content: tool explanations and legal pages */
+  .prose-content {
+    @apply max-w-none text-[1.0625rem] leading-relaxed text-ink-700;
+  }
+  .prose-content h2 {
+    @apply mt-12 mb-4 scroll-mt-24 text-2xl font-semibold tracking-tight text-ink-900 first:mt-0;
+  }
+  .prose-content h3 {
+    @apply mt-8 mb-3 scroll-mt-24 text-lg font-semibold text-ink-900;
+  }
+  .prose-content p {
+    @apply my-4;
+  }
+  .prose-content ul,
+  .prose-content ol {
+    @apply my-4 space-y-2 pl-6;
+  }
+  .prose-content ul {
+    @apply list-disc marker:text-brand-500;
+  }
+  .prose-content ol {
+    @apply list-decimal marker:text-ink-500;
+  }
+  .prose-content a:not(.btn) {
+    @apply font-medium text-brand-600 underline decoration-brand-200 underline-offset-2 hover:decoration-brand-600;
+  }
+  .prose-content table {
+    @apply my-6 w-full border-collapse text-left text-sm sm:text-[0.95rem];
+  }
+  .prose-content th {
+    @apply border-b-2 border-line-strong px-3 py-2 font-semibold text-ink-900;
+  }
+  .prose-content td {
+    @apply border-b border-line px-3 py-2 align-top;
+  }
+  .prose-content blockquote {
+    @apply my-6 rounded-r-xl border-l-4 border-lilac-300 bg-lilac-50/60 px-5 py-3 text-ink-800;
+  }
+  .prose-content strong {
+    @apply font-semibold text-ink-900;
+  }
+  .prose-content code {
+    @apply rounded bg-surface px-1.5 py-0.5 font-mono text-[0.9em] text-ink-900;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.animate-fade-in {
+  animation: fade-in 180ms ease-out both;
 }

@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "skills": {
+    "seo": {
+      "source": "agricidaniel/claude-seo",
+      "sourceType": "github",
+      "skillPath": "skills/seo/SKILL.md",
+      "computedHash": "93ab38c550dc55094f6f616ac150dba2a09a5154cfb9b912246343adf411d62b"
+    },
+    "seo-audit": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "skillPath": "skills/seo-audit/SKILL.md",
+      "computedHash": "9a94c66cb3098b03037f072b6f561cca75410c6d8611e50646baf9e8a5dabe8f"
+    },
+    "seo-backlinks": {
+      "source": "agricidaniel/claude-seo",
+      "sourceType": "github",
+      "skillPath": "skills/seo-backlinks/SKILL.md",
+      "computedHash": "de9d6a0815d98908fb2db9227b0229c26a7c66b24980230baf395ad508c9e622"
+    },
+    "seo-page": {
+      "source": "agricidaniel/claude-seo",
+      "sourceType": "github",
+      "skillPath": "skills/seo-page/SKILL.md",
+      "computedHash": "65dbef381db8394601f8912518b6004a902ee8d6dd242890a16aadf78bc95f81"
+    }
+  }
+}
