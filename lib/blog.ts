@@ -9,7 +9,7 @@ export interface Post {
   slug: string;
   /** Visible headline (H1). */
   title: string;
-  /** <title> tag, without the brand suffix. Keep it under about 60 characters. */
+  /** <title> tag, used exactly as written (no automatic brand suffix). Keep it under about 60 characters. */
   metaTitle: string;
   /** Meta description and listing summary. Aim for 120–160 characters. */
   description: string;
@@ -28,7 +28,7 @@ export const posts: readonly Post[] = [
     title: "How to Compress Images Online Without Losing Too Much Quality",
     metaTitle: "How to Compress Images Online Without Losing Quality",
     description:
-      "Learn how image compression works, when to use JPEG, PNG or WebP, how dimensions affect file size, and how to shrink a photo step by step in your browser.",
+      "Learn how to compress images online, choose JPEG, PNG or WebP, adjust dimensions, and reduce photo file sizes step by step.",
     published: "2026-10-22",
     updated: "2026-10-22",
     readingMinutes: 9,
@@ -37,7 +37,7 @@ export const posts: readonly Post[] = [
   {
     slug: "how-to-create-a-qr-code",
     title: "How to Create a QR Code from a Link or Text",
-    metaTitle: "How to Create a QR Code from a Link or Text",
+    metaTitle: "How to Create a QR Code from a Link or Text | QuickToolsWorld",
     description:
       "A practical guide to making a QR code for a website link or a short message: choosing the size and colors, testing it, and avoiding common mistakes.",
     published: "2026-10-22",
@@ -61,7 +61,7 @@ export const posts: readonly Post[] = [
     title: "How to Calculate Percentages: Simple Formulas and Examples",
     metaTitle: "How to Calculate Percentages: Formulas and Examples",
     description:
-      "Simple formulas for percentages of a number, percentage of marks, increase, decrease and difference between two numbers, with step-by-step worked examples.",
+      "Learn simple formulas for a percentage of a number, marks, increases, decreases and differences, with step-by-step worked examples.",
     published: "2026-10-22",
     updated: "2026-10-22",
     readingMinutes: 8,

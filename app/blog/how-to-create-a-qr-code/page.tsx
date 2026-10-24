@@ -114,7 +114,8 @@ export default function Page() {
       <p>
         When the code is ready, select <strong>Download PNG</strong>. The image is saved as <code>qr-code.png</code>.
         PNG is lossless, so the edges of every module stay sharp, which is exactly what scanners need. Avoid converting
-        a QR code to JPEG, because JPEG compression can blur those edges.
+        a QR code to JPEG, because JPEG compression can blur those edges. Our guide to{" "}
+        <Link href="/blog/how-to-compress-images-online">choosing between JPEG, PNG and WebP</Link> explains why.
       </p>
       <p>
         If you change the text, size or colors after generating, the tool tells you the preview is out of date. Select{" "}

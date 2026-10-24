@@ -17,7 +17,7 @@ Last reviewed: October 22, 2026. **Detailed keyword research, with autocomplete 
 | --- | --- | --- |
 | Status codes | All 13 public pages returned 200; unknown URLs returned 404 | No change needed |
 | Broken links | None found by a full crawl | Re-checked after changes |
-| Canonicals | Absolute, self-referencing, on `https://quicktoolsworld.com` | Kept; added for blog pages |
+| Canonicals | Absolute, self-referencing, on `https://www.quicktoolsworld.com` | Kept; added for blog pages |
 | Duplicate titles or descriptions | None | Kept unique for new pages |
 | Homepage H1 | Slogan only ("Less hassle. More done."), no description of the site | H1 is now "Free Online Tools for Everyday Tasks"; the slogan stays as large display text |
 | Title length | Homepage title 81 characters, several tool titles truncated | Shortened; key words come before the brand |

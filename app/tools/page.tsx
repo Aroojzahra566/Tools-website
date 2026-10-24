@@ -5,10 +5,11 @@ import { pageMetadata } from "@/lib/metadata";
 import { tools } from "@/lib/tools";
 
 export const metadata = pageMetadata({
-  title: "All Free Online Tools",
+  title: "All Free Online Tools for Text, Images, QR Codes & More",
   description:
     "Browse all six free tools: word counter, image compressor, QR code generator, password generator, case converter and percentage calculator. No sign-up.",
   path: "/tools",
+  absoluteTitle: true,
 });
 
 export default function ToolsPage() {

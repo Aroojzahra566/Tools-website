@@ -1,6 +1,6 @@
 # QuickToolsWorld – free online tools
 
-**https://quicktoolsworld.com** · *Your everyday tools. One quick stop.*
+**https://www.quicktoolsworld.com** · *Your everyday tools. One quick stop.*
 
 A fast, privacy-friendly website with six browser-based tools:
 
@@ -40,7 +40,7 @@ npm run build && npm run start
 | What | Where |
 | --- | --- |
 | Brand name, wordmark split, tagline, social links, legal "last updated" date | `lib/site.ts` |
-| Production domain | `lib/site.ts` (default `https://quicktoolsworld.com`), or override with `NEXT_PUBLIC_SITE_URL` |
+| Production domain | `lib/site.ts` (default `https://www.quicktoolsworld.com`), or override with `NEXT_PUBLIC_SITE_URL` |
 | Contact email | `lib/site.ts` (default `support@quicktoolsworld.com`), or override with `NEXT_PUBLIC_CONTACT_EMAIL` |
 | Tool list, titles, descriptions, related tools | `lib/tools.ts` |
 | AdSense | `lib/ads.ts` + `NEXT_PUBLIC_ADSENSE_*` variables |
@@ -88,7 +88,7 @@ The site works on any host that supports Next.js 16. The simplest option is **Ve
 
 1. Push this repository to GitHub, GitLab or Bitbucket.
 2. In Vercel, select **Add New → Project** and import the repository. The defaults (Next.js, `npm run build`) are correct.
-3. No environment variables are required. `NEXT_PUBLIC_SITE_URL` and `NEXT_PUBLIC_CONTACT_EMAIL` default to `https://quicktoolsworld.com` and `support@quicktoolsworld.com`.
+3. No environment variables are required. `NEXT_PUBLIC_SITE_URL` and `NEXT_PUBLIC_CONTACT_EMAIL` default to `https://www.quicktoolsworld.com` and `support@quicktoolsworld.com`.
 4. Deploy.
 
 Other options: Netlify, Cloudflare (via OpenNext), or any Node.js server with `npm run build && npm run start`. Cache Components requires the Node.js runtime.
@@ -97,11 +97,11 @@ Other options: Netlify, Cloudflare (via OpenNext), or any Node.js server with `n
 
 ### Custom domain (quicktoolsworld.com)
 
-1. In your host's dashboard (Vercel: **Project → Settings → Domains**), add both `quicktoolsworld.com` and `www.quicktoolsworld.com`. Make `quicktoolsworld.com` the primary domain and let `www` redirect to it, because that is the address used in canonical URLs and the sitemap.
+1. In your host's dashboard (Vercel: **Project → Settings → Domains**), add both `quicktoolsworld.com` and `www.quicktoolsworld.com`. The live site uses `www.quicktoolsworld.com` as the primary domain, with `quicktoolsworld.com` redirecting to it. That is the address used in canonical URLs and the sitemap.
 2. At your domain registrar, create the DNS records your host shows you (Vercel: an `A` record for the apex domain and a `CNAME` for `www`). Wait for the host to show both as valid and for HTTPS certificates to be issued.
-3. Open `https://quicktoolsworld.com`, `https://www.quicktoolsworld.com` and `http://quicktoolsworld.com` and check that all three end up at `https://quicktoolsworld.com`.
+3. Open `https://quicktoolsworld.com`, `https://www.quicktoolsworld.com` and `http://quicktoolsworld.com` and check that all three end up at `https://www.quicktoolsworld.com`.
 
-If you ever choose `www` as the primary domain instead, set `NEXT_PUBLIC_SITE_URL=https://www.quicktoolsworld.com` and redeploy so canonical URLs match.
+If you ever make the non-`www` address primary instead, set `NEXT_PUBLIC_SITE_URL=https://quicktoolsworld.com` and redeploy so canonical URLs match.
 
 ## Contact form (Brevo)
 
@@ -137,7 +137,7 @@ Nobody can guarantee rankings or that Google will index every page, but these st
 1. Go to [Google Search Console](https://search.google.com/search-console) and choose **Add property**.
 2. Pick **Domain** and enter `quicktoolsworld.com`. This covers `www` and non-`www`, and `http` and `https`.
 3. Google shows a `TXT` record. Add it to your DNS at the registrar, wait a few minutes, and select **Verify**.
-4. Open **Indexing → Sitemaps**, enter `sitemap.xml` and select **Submit**. The full address is `https://quicktoolsworld.com/sitemap.xml`, and it lists 18 pages: the homepage, all tools, the blog, the four articles and the information pages.
+4. Open **Indexing → Sitemaps**, enter `sitemap.xml` and select **Submit**. The full address is `https://www.quicktoolsworld.com/sitemap.xml`, and it lists 18 pages: the homepage, all tools, the blog, the four articles and the information pages.
 
 If you prefer a **URL prefix** property, you can verify with an HTML meta tag instead. Add the code Google gives you to the `verification` field of the `metadata` export in `app/layout.tsx`, for example `verification: { google: "code-from-search-console" }`. Never commit a made-up code.
 
@@ -145,9 +145,9 @@ If you prefer a **URL prefix** property, you can verify with an HTML meta tag in
 
 Use **URL inspection** on these pages and select **Request indexing** for each one once:
 
-- `https://quicktoolsworld.com/`
-- `https://quicktoolsworld.com/tools` and each tool page, such as `/image-compressor`
-- `https://quicktoolsworld.com/blog`
+- `https://www.quicktoolsworld.com/`
+- `https://www.quicktoolsworld.com/tools` and each tool page, such as `/image-compressor`
+- `https://www.quicktoolsworld.com/blog`
 - each article, such as `/blog/how-to-compress-images-online`
 
 **View tested page → Screenshot** shows what Google's smartphone crawler sees. The headings, text and links should all be there without clicking anything.
@@ -221,7 +221,7 @@ The AdSense script (`adsbygoogle.js`, publisher `ca-pub-1544968719280843`, set i
 
 ### Before you apply
 
-- [ ] Deploy on `quicktoolsworld.com` and check that canonical URLs and the sitemap use it.
+- [ ] Deploy on `www.quicktoolsworld.com` and check that canonical URLs and the sitemap use it.
 - [ ] Make sure `support@quicktoolsworld.com` exists and that someone reads it (set up the mailbox or forwarding with your domain or email provider). Send it a test email.
 - [ ] Review the About, Privacy Policy, Terms and Disclaimer pages and confirm they match how you run the site. In particular, confirm:
   - **Hosting provider and its log retention.** The Privacy Policy says your host keeps technical logs, such as IP addresses, for a limited period. Check your host's privacy notice and data processing terms.

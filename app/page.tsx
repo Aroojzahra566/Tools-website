@@ -13,15 +13,13 @@ import { faqPageData } from "@/lib/structured-data";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 import { tools, toolPath } from "@/lib/tools";
 
-export const metadata: Metadata = {
-  ...pageMetadata({
-    title: `${siteConfig.name} – Free Online Tools`,
-    description: siteConfig.description,
-    path: "/",
-  }),
-  // The homepage title already contains the brand, so skip the template suffix.
-  title: { absolute: `${siteConfig.name} — Free Online Tools for Everyday Tasks` },
-};
+// The homepage title already contains the brand, so it skips the "| Brand" suffix.
+export const metadata: Metadata = pageMetadata({
+  title: `${siteConfig.name} — Free Online Tools for Everyday Tasks`,
+  description: siteConfig.description,
+  path: "/",
+  absoluteTitle: true,
+});
 
 const benefits = [
   {

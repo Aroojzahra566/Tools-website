@@ -7,7 +7,7 @@ import { tools, toolPath } from "@/lib/tools";
 export const metadata: Metadata = {
   title: "Page Not Found",
   description: "The page you were looking for could not be found.",
-  robots: { index: false },
+  // No robots field: Next.js already adds a noindex tag to every 404 response.
 };
 
 export default function NotFound() {

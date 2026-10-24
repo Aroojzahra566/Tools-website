@@ -4,8 +4,8 @@ import { pageMetadata } from "@/lib/metadata";
 import { siteConfig } from "@/lib/site";
 
 export const metadata = pageMetadata({
-  title: "Disclaimer",
-  description: `How accurate the ${siteConfig.name} tools and guides are, what they are and aren’t intended for, and why you should check important results before relying on them.`,
+  title: "Disclaimer: Tool Accuracy and Intended Use",
+  description: `Read the ${siteConfig.name} disclaimer on the accuracy of our tools and guides, their intended use, and why to check important results.`,
   path: "/disclaimer",
 });
 

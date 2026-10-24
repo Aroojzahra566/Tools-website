@@ -6,9 +6,10 @@ import { pageMetadata } from "@/lib/metadata";
 import { siteConfig } from "@/lib/site";
 
 export const metadata = pageMetadata({
-  title: "Contact Us",
-  description: `Contact ${siteConfig.name} for support, feedback, technical issues, or suggestions about our free online tools.`,
+  title: `Contact ${siteConfig.name} | Help & Feedback`,
+  description: `Get help with ${siteConfig.name}'s free online tools, report a bug or technical issue, or send feedback and ideas by form or email.`,
   path: "/contact",
+  absoluteTitle: true,
 });
 
 export default function ContactPage() {

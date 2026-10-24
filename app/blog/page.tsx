@@ -34,7 +34,7 @@ export default function BlogPage() {
       <div className="border-b border-line bg-surface">
         <div className="container-page pt-6 pb-10 sm:pt-8 sm:pb-12">
           <Breadcrumbs items={[{ name: "Blog", path: "/blog" }]} />
-          <h1 className="mt-6 text-3xl font-bold tracking-tight text-ink-900 sm:text-4xl">Guides and how-tos</h1>
+          <h1 className="mt-6 text-3xl font-bold tracking-tight text-ink-900 sm:text-4xl">Guides for Everyday Online Tasks</h1>
           <p className="mt-3 max-w-2xl text-lg leading-relaxed text-ink-600">
             Practical explanations of the everyday tasks our tools help with: what to do, why it works and the mistakes
             to avoid. Each guide links to the matching{" "}

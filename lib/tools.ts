@@ -36,7 +36,7 @@ export const tools: readonly Tool[] = [
     metaTitle: "Word Counter – Words & Characters With or Without Spaces",
     h1: "Free Online Word and Character Counter",
     metaDescription:
-      "Count words and characters with or without spaces, plus sentences, paragraphs and reading time. Works with English, Urdu, Hindi, Arabic and other languages.",
+      "Count words, characters with or without spaces, sentences, paragraphs and reading time. Works with English, Urdu, Hindi, Arabic and more.",
     keywords: ["word count", "character count", "characters", "letters", "length", "essay", "reading time", "text", "writing", "words"],
     related: ["case-converter", "password-generator", "percentage-calculator"],
   },
@@ -48,7 +48,7 @@ export const tools: readonly Tool[] = [
     metaTitle: "Image Compressor – Compress JPG & PNG to 100KB or 200KB",
     h1: "Compress Images Online for Smaller File Sizes",
     metaDescription:
-      "Compress JPG, PNG and WebP images for free. Reduce file size with a quality slider or a target such as 100 KB or 200 KB, then download. Nothing is uploaded.",
+      "Compress JPG, PNG and WebP images with a quality slider or a target size like 100 KB. Images are processed in your browser, not uploaded.",
     keywords: ["compress", "shrink", "optimize", "reduce", "smaller", "jpg", "jpeg", "png", "webp", "photo", "picture", "resize", "image size", "file size", "kb", "mb", "100kb", "200kb", "50kb", "20kb", "target size", "form upload"],
     related: ["qr-code-generator", "word-counter", "case-converter"],
   },
@@ -60,7 +60,7 @@ export const tools: readonly Tool[] = [
     metaTitle: "Free QR Code Generator – No Sign-Up, Codes Never Expire",
     h1: "Create and Download QR Codes Online",
     metaDescription:
-      "Create a free QR code from any link or text and download it as a PNG. Static codes never expire, need no sign-up and contain no tracking or redirects.",
+      "Create a free QR code from a link or text, choose its size and colors, and download it as a PNG. Static codes never expire and have no tracking.",
     keywords: ["qr", "qr code", "barcode", "code", "link", "url", "website", "scan", "wifi", "menu"],
     related: ["image-compressor", "password-generator", "word-counter"],
   },
@@ -72,7 +72,7 @@ export const tools: readonly Tool[] = [
     metaTitle: "Random Password Generator – Strong & Secure Passwords",
     h1: "Generate Strong Random Passwords",
     metaDescription:
-      "Generate strong random passwords of 8, 12, 16, 20 or up to 128 characters, with letters, numbers and symbols. Created in your browser and never sent anywhere.",
+      "Generate strong random passwords up to 128 characters with letters, numbers and symbols. Passwords are created in your browser, never sent.",
     keywords: ["password", "passcode", "secure", "strong", "random", "security", "login", "pin", "generator"],
     related: ["qr-code-generator", "word-counter", "case-converter"],
   },
@@ -84,7 +84,7 @@ export const tools: readonly Tool[] = [
     metaTitle: "Case Converter – Upper, Lower, Title & Sentence Case",
     h1: "Convert Text to Uppercase, Lowercase and More",
     metaDescription:
-      "Change text to UPPERCASE, lowercase, Title Case or Sentence case in one click, then copy the result. A free online case converter that runs in your browser.",
+      "Convert text to UPPERCASE, lowercase, Title Case or Sentence case in one click, then copy the result. A free case converter in your browser.",
     keywords: ["uppercase", "lowercase", "upper", "lower", "caps", "capital", "capitalize", "title case", "sentence case", "text", "convert"],
     related: ["word-counter", "password-generator", "percentage-calculator"],
   },

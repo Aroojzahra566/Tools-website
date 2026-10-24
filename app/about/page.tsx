@@ -6,14 +6,12 @@ import { pageMetadata } from "@/lib/metadata";
 import { siteConfig } from "@/lib/site";
 import { tools, toolPath, type ToolSlug } from "@/lib/tools";
 
-export const metadata = {
-  ...pageMetadata({
-    title: `About ${siteConfig.name}`,
-    description: `Why ${siteConfig.name} exists, who it’s for, and how its six free browser-based tools help with everyday writing, image, security and math tasks.`,
-    path: "/about",
-  }),
-  title: { absolute: `About ${siteConfig.name}` },
-};
+export const metadata = pageMetadata({
+  title: `About ${siteConfig.name} | Free Browser-Based Online Tools`,
+  description: `Why ${siteConfig.name} exists, who it’s for, and how its six free browser-based tools help with everyday writing, image, security and math tasks.`,
+  path: "/about",
+  absoluteTitle: true,
+});
 
 /** How each tool helps, in plain terms. */
 const toolHelp: Record<ToolSlug, string> = {

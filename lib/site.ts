@@ -19,14 +19,15 @@ export const siteConfig = {
   wordmark: ["QuickTools", "World"],
   tagline: "Your everyday tools. One quick stop.",
   description:
-    "Use QuickToolsWorld's free online tools to count words, compress images, generate QR codes, create secure passwords, convert text case, and calculate percentages.",
+    "Use free online tools to count words, compress images, create QR codes, generate passwords, convert text case, and calculate percentages.",
 
   /**
    * Production URL used for canonical links, the sitemap and Open Graph tags.
-   * Defaults to the production domain. Override with NEXT_PUBLIC_SITE_URL only if
-   * the site moves (for example to a staging domain you want indexed separately).
+   * Defaults to the primary production domain. The www address is primary on Vercel
+   * (quicktoolsworld.com redirects to it), so canonical URLs must use www too.
+   * Override with NEXT_PUBLIC_SITE_URL only if the primary domain changes.
    */
-  url: normalizeUrl(process.env.NEXT_PUBLIC_SITE_URL || "https://quicktoolsworld.com"),
+  url: normalizeUrl(process.env.NEXT_PUBLIC_SITE_URL || "https://www.quicktoolsworld.com"),
 
   /** Public support email, shown on the Contact, About and Privacy pages. Override with NEXT_PUBLIC_CONTACT_EMAIL. */
   contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "support@quicktoolsworld.com",

@@ -18,12 +18,18 @@ interface PageMetaInput {
   path: string;
   /** Article details, for blog posts. */
   article?: { publishedTime: string; modifiedTime: string; author: string };
+  /**
+   * Use `title` exactly as written, without the "| Brand" suffix, in the <title> and social tags.
+   * For titles that already contain the brand or are long enough on their own.
+   */
+  absoluteTitle?: boolean;
 }
 
 /** Builds unique title, description, canonical and social metadata for a page. */
-export function pageMetadata({ title, description, path, article }: PageMetaInput): Metadata {
+export function pageMetadata({ title, description, path, article, absoluteTitle = false }: PageMetaInput): Metadata {
+  const fullTitle = absoluteTitle ? title : `${title} | ${siteConfig.name}`;
   return {
-    title,
+    title: absoluteTitle ? { absolute: title } : title,
     description,
     alternates: { canonical: path },
     openGraph: {
@@ -37,14 +43,14 @@ export function pageMetadata({ title, description, path, article }: PageMetaInpu
         : { type: "website" as const }),
       siteName: siteConfig.name,
       locale: siteConfig.locale,
-      title: `${title} | ${siteConfig.name}`,
+      title: fullTitle,
       description,
       url: path,
       images: [ogImage],
     },
     twitter: {
       card: "summary_large_image",
-      title: `${title} | ${siteConfig.name}`,
+      title: fullTitle,
       description,
       images: [ogImage.url],
     },
@@ -55,8 +61,10 @@ export function toolMetadata(slug: ToolSlug): Metadata {
   const tool = getTool(slug);
   // Tool titles are already descriptive and near Google's display limit, so they skip the "| Brand" suffix.
   // Google shows the site name separately in search results.
-  return {
-    ...pageMetadata({ title: tool.metaTitle, description: tool.metaDescription, path: toolPath(slug) }),
-    title: { absolute: tool.metaTitle },
-  };
+  return pageMetadata({
+    title: tool.metaTitle,
+    description: tool.metaDescription,
+    path: toolPath(slug),
+    absoluteTitle: true,
+  });
 }
