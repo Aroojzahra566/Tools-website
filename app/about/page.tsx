@@ -92,6 +92,7 @@ export default function AboutPage() {
       </ul>
       <p>
         Want to learn more about the tasks behind the tools? Our <Link href="/blog">guides</Link> explain how to{" "}
+        <Link href="/blog/how-to-count-words-and-characters">count words and characters</Link>,{" "}
         <Link href="/blog/how-to-compress-images-online">compress images</Link>,{" "}
         <Link href="/blog/how-to-create-a-qr-code">create a QR code</Link>,{" "}
         <Link href="/blog/how-to-create-strong-passwords">make strong passwords</Link> and{" "}

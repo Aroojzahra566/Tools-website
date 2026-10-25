@@ -28,10 +28,10 @@ export const posts: readonly Post[] = [
     title: "How to Compress Images Online Without Losing Too Much Quality",
     metaTitle: "How to Compress Images Online Without Losing Quality",
     description:
-      "Learn how to compress images online, choose JPEG, PNG or WebP, adjust dimensions, and reduce photo file sizes step by step.",
+      "Learn how to compress JPG, PNG and WebP images online, reduce photo file size, choose the right dimensions for websites, and check quality.",
     published: "2026-10-22",
-    updated: "2026-10-22",
-    readingMinutes: 9,
+    updated: "2026-10-25",
+    readingMinutes: 12,
     tool: "image-compressor",
   },
   {
@@ -39,21 +39,21 @@ export const posts: readonly Post[] = [
     title: "How to Create a QR Code from a Link or Text",
     metaTitle: "How to Create a QR Code from a Link or Text | QuickToolsWorld",
     description:
-      "A practical guide to making a QR code for a website link or a short message: choosing the size and colors, testing it, and avoiding common mistakes.",
+      "Create a QR code from a link, text or Wi-Fi details, choose the size and colors, test it before printing, and learn when you need a dynamic code.",
     published: "2026-10-22",
-    updated: "2026-10-22",
-    readingMinutes: 8,
+    updated: "2026-10-25",
+    readingMinutes: 10,
     tool: "qr-code-generator",
   },
   {
     slug: "how-to-create-strong-passwords",
-    title: "How to Create Strong Passwords and Keep Them Secure",
-    metaTitle: "How to Create Strong Passwords and Keep Them Secure",
+    title: "How to Create a Strong Password and Keep It Secure",
+    metaTitle: "How to Create a Strong Password and Keep It Secure",
     description:
-      "What actually makes a password strong, why length and randomness matter, and how to generate, store and protect unique passwords for every account.",
+      "Learn how to create a strong, complex password, how random generators and browser suggestions work, and how to store and protect every password.",
     published: "2026-10-22",
-    updated: "2026-10-22",
-    readingMinutes: 7,
+    updated: "2026-10-25",
+    readingMinutes: 9,
     tool: "password-generator",
   },
   {
@@ -61,11 +61,22 @@ export const posts: readonly Post[] = [
     title: "How to Calculate Percentages: Simple Formulas and Examples",
     metaTitle: "How to Calculate Percentages: Formulas and Examples",
     description:
-      "Learn simple formulas for a percentage of a number, marks, increases, decreases and differences, with step-by-step worked examples.",
+      "Learn how to calculate a percentage of a number, exam marks, increases, decreases and percentage points, with simple formulas and worked examples.",
     published: "2026-10-22",
-    updated: "2026-10-22",
+    updated: "2026-10-25",
     readingMinutes: 8,
     tool: "percentage-calculator",
+  },
+  {
+    slug: "how-to-count-words-and-characters",
+    title: "How to Count Words and Characters, With and Without Spaces",
+    metaTitle: "How to Count Words and Characters, With and Without Spaces",
+    description:
+      "How word, character, sentence and paragraph counts work, when spaces count, common word and character limits, and how to check your text online.",
+    published: "2026-10-25",
+    updated: "2026-10-25",
+    readingMinutes: 8,
+    tool: "word-counter",
   },
 ];
 

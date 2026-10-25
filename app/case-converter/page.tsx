@@ -13,6 +13,21 @@ export default function Page() {
       tool={<CaseConverter />}
       faqs={[
         {
+          question: "How do I convert uppercase text to lowercase?",
+          answer:
+            "Paste the text into the box and select lowercase. The converted version appears in the result box while your original stays unchanged, so you can try another style. Select Copy result to copy it. This also fixes text typed with Caps Lock on: choose Sentence case to restore normal capitals at the start of each sentence.",
+        },
+        {
+          question: "What does a capitalization converter do?",
+          answer:
+            "It changes which letters are capitals without you retyping anything. This one offers four styles: UPPERCASE, lowercase, Title Case and Sentence case. Only the capitalization changes; punctuation, spacing and line breaks stay exactly as you wrote them.",
+        },
+        {
+          question: "Does it work with multiple lines and paragraphs?",
+          answer:
+            "Yes. Line breaks and blank lines are kept. In Sentence case and Title Case, the first word of each new line is capitalized, so lists and headings on separate lines convert correctly.",
+        },
+        {
           question: "What is the difference between Title Case and Sentence case?",
           answer:
             "Title Case capitalizes the main words, as in “The Lord of the Rings”. Sentence case capitalizes only the first word of each sentence (and the word “I”), as in “The lord of the rings”. Sentence case is common for web headings and is how ordinary prose is written.",

@@ -9,7 +9,7 @@ import { absoluteUrl, siteConfig } from "@/lib/site";
 export const metadata = pageMetadata({
   title: "Blog: Guides for Everyday Online Tasks",
   description:
-    "Clear, practical guides to compressing images, creating QR codes, making strong passwords and calculating percentages, with step-by-step examples.",
+    "Practical guides to counting words, compressing images, creating QR codes, making strong passwords and calculating percentages, with worked examples.",
   path: "/blog",
 });
 

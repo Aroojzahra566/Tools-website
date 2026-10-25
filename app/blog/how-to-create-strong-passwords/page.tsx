@@ -10,11 +10,15 @@ const s = {
   strong: "What makes a password strong",
   length: "Why length matters most",
   random: "Randomness and unpredictability",
+  steps: "How to create a strong password, step by step",
+  complex: "How to create a complex password that meets site rules",
   reuse: "Why reusing passwords is risky",
-  generator: "How to generate a strong password",
+  generator: "How to generate a strong password with our tool",
+  suggest: "Letting your browser or password manager suggest one",
   settings: "Choosing the length and character types",
   storage: "Storing passwords safely",
   mfa: "Add multifactor authentication",
+  passkeys: "Passkeys: an alternative where available",
   mistakes: "Common password mistakes",
   faq: "Frequently asked questions",
   summary: "Summary",
@@ -24,9 +28,10 @@ export default function Page() {
   return (
     <ArticleLayout slug={SLUG} toc={toc(s)}>
       <p>
-        <strong>The short answer:</strong> a strong password is long, random and used for only one account. Aim for at
-        least 16 random characters, or a passphrase of several unrelated random words. Store your passwords in a
-        password manager, and turn on multifactor authentication wherever it is offered.
+        <strong>The short answer:</strong> to create a strong password, make it long, random and unique to one
+        account. Aim for at least 16 random characters, or a passphrase of several unrelated random words, and let a
+        password generator or password manager do the random part for you. Store your passwords in a password
+        manager, and turn on multifactor authentication wherever it is offered.
       </p>
       <p>
         No password makes an account impossible to break into, but these habits make the most common attacks far less
@@ -131,6 +136,67 @@ export default function Page() {
         .
       </p>
 
+      <h2 id="steps">{s.steps}</h2>
+      <p>Whether you are signing up for a new account or replacing an old password, the process is the same:</p>
+      <ol>
+        <li>
+          <strong>Decide whether you will type it or store it.</strong> Most passwords only need to be stored in a
+          password manager, so they can be long and fully random. Only a few, such as your device login and your
+          password manager’s main password, need to be memorable.
+        </li>
+        <li>
+          <strong>Generate it randomly.</strong> Use a password generator or your password manager for stored
+          passwords, aiming for 16 characters or more. For a password you must remember, use a passphrase of random
+          words instead.
+        </li>
+        <li>
+          <strong>Check the site’s rules.</strong> If the site rejects the password, adjust the length or character
+          types as described below rather than switching to something guessable.
+        </li>
+        <li>
+          <strong>Save it straight away</strong> in your password manager, before you submit the form, so a random
+          password is never lost.
+        </li>
+        <li>
+          <strong>Turn on multifactor authentication</strong> for the account if it is offered.
+        </li>
+      </ol>
+
+      <h2 id="complex">{s.complex}</h2>
+      <p>
+        Many websites still insist on a “complex” password: at least one uppercase letter, one lowercase letter, one
+        number and one symbol. A randomly generated password with all four character types ticked meets these rules
+        automatically, and it is far stronger than a word with a capital at the start and “1!” at the end.
+      </p>
+      <p>
+        Complexity rules are a blunt tool. People tend to satisfy them in predictable ways, which is why NIST’s{" "}
+        <a href="https://pages.nist.gov/800-63-4/sp800-63b.html" rel="noopener">
+          Digital Identity Guidelines
+        </a>{" "}
+        now tell services not to require mixtures of character types, and to check new passwords against lists of
+        common and previously breached passwords instead. Until every site follows that advice, here is how to handle
+        the rules you meet:
+      </p>
+      <ul>
+        <li>
+          <strong>Symbols rejected?</strong> Some sites only accept certain symbols. Leave symbols out, or regenerate,
+          and add a few characters of length to make up for it.
+        </li>
+        <li>
+          <strong>Maximum length too short?</strong> Use the longest password the site allows, and make sure
+          multifactor authentication is turned on.
+        </li>
+        <li>
+          <strong>Password refused as “too common” or “breached”?</strong> Take the hint. Generate a new random one
+          rather than tweaking the old one.
+        </li>
+      </ul>
+      <p>
+        What you should not do is make a password look complex with predictable substitutions, such as <code>@</code>{" "}
+        for “a” or <code>0</code> for “o”. Cracking tools try those swaps automatically, so they add very little
+        strength.
+      </p>
+
       <h2 id="reuse">{s.reuse}</h2>
       <p>
         Data breaches are common, and leaked email and password pairs are widely traded. Attackers feed them into
@@ -174,6 +240,21 @@ export default function Page() {
       <p>
         The tool also shows an estimated strength, using the same length × log₂(character set) calculation described
         above. It is a guide, not a guarantee.
+      </p>
+
+      <h2 id="suggest">{s.suggest}</h2>
+      <p>
+        You don’t always need a separate tool. Most current browsers and password managers can suggest a strong
+        password when you create an account or change a password, and save it at the same time. In Chrome, for
+        example, when password saving is turned on, selecting a new-password field usually offers a suggested strong
+        password, which is then stored in Google Password Manager. Safari, Edge, Firefox and dedicated password
+        managers have similar features.
+      </p>
+      <p>
+        Built-in suggestions are a good choice when you already use that browser’s password manager, because the
+        password is generated and saved in one step. A standalone generator such as ours is useful when you want to
+        control the length or character types, when a site’s rules reject the suggested password, or when you store
+        your passwords in a different app.
       </p>
 
       <h2 id="settings">{s.settings}</h2>
@@ -239,6 +320,18 @@ export default function Page() {
         covers the options.
       </p>
 
+      <h2 id="passkeys">{s.passkeys}</h2>
+      <p>
+        A growing number of services let you sign in with a <strong>passkey</strong> instead of a password. A passkey
+        is stored on your device or in your password manager and unlocked with your fingerprint, face or device PIN.
+        Passkeys are designed to resist phishing and can’t be reused across websites, so they are a strong option
+        where they are available.
+      </p>
+      <p>
+        You will still need good passwords for many services, for older accounts and for your password manager itself,
+        so the advice in this guide still applies.
+      </p>
+
       <h2 id="mistakes">{s.mistakes}</h2>
       <ul>
         <li>
@@ -265,27 +358,32 @@ export default function Page() {
       <ArticleFaq
         items={[
           {
-            q: "How long should my password be?",
-            a: "Use at least 16 random characters for passwords kept in a password manager. For a passphrase you need to remember, use several random, unrelated words. Longer is stronger, as long as the website accepts it.",
+            q: "How do I create a strong password I can remember?",
+            a: "Use a passphrase: four or more random, unrelated words, such as words picked by rolling dice or opening a dictionary at random. Avoid quotes, song lyrics and personal details, which attackers try first. Keep memorable passphrases for the few passwords you type yourself, like your device or password manager, and let the manager generate and remember the rest.",
           },
           {
-            q: "Is it safe to use an online password generator?",
+            q: "Can my browser suggest a strong password for me?",
+            a: "Yes. Most current browsers and password managers, including Chrome, Safari, Edge and Firefox, can suggest a strong password when you create an account or change a password, and save it for you. Accept the suggestion and let the password manager fill it in next time. If the site rejects it, generate one with the length and characters the site allows.",
+          },
+          {
+            q: "What makes a password complex?",
             a: (
               <>
-                It depends on how it works. Choose one that generates passwords in your browser with cryptographically
-                secure randomness and doesn’t send them anywhere. The{" "}
-                <Link href="/password-generator">QuickToolsWorld Password Generator</Link> works this way. A password
-                manager’s built-in generator is another good option.
+                Most websites call a password complex when it mixes uppercase and lowercase letters, numbers and
+                symbols. Complexity only helps when the characters are chosen at random. A strong complex password is
+                16 or more random characters with no words, names or dates in it. Never use a password you have seen
+                printed as an example, because published examples end up in attackers’ guess lists. Create your own
+                with the <Link href="/password-generator">Password Generator</Link> or your password manager.
               </>
             ),
           },
           {
-            q: "Should I change my passwords regularly?",
-            a: "Current guidance, including NIST’s, says forced periodic changes tend to lead to weaker, predictable passwords. Change a password when there is a reason to, such as a breach, suspicious activity or if you shared it.",
+            q: "Should I use a different password for every account?",
+            a: "Yes. When one website is breached, attackers try the leaked email and password on many other sites. A unique password for every account means a single leak exposes only that one account. A password manager makes this practical, because it remembers every password for you.",
           },
           {
-            q: "Are passkeys better than passwords?",
-            a: "Passkeys are designed to resist phishing and can’t be reused across websites, so they are a strong option where they are available. You will still need good passwords for many services, and for your password manager itself.",
+            q: "Should I change my passwords regularly?",
+            a: "Current guidance, including NIST’s, says forced periodic changes tend to lead to weaker, predictable passwords. Change a password when there is a reason to, such as a breach, suspicious activity or if you shared it.",
           },
           {
             q: "Can a strong password guarantee my account is safe?",
@@ -296,9 +394,11 @@ export default function Page() {
 
       <h2 id="summary">{s.summary}</h2>
       <p>
-        Strong password security comes down to a few habits: make every password long and random, never reuse one,
-        keep them in a password manager, and add multifactor authentication to your important accounts. To create your
-        next password, open the <Link href="/password-generator">Password Generator</Link>.
+        Creating a strong password comes down to a few habits: make every password long and random, never reuse one,
+        keep them in a password manager, and add multifactor authentication to your important accounts. No password
+        makes an account impossible to break into, but these steps stop the most common attacks. To create your next
+        password, open the <Link href="/password-generator">Password Generator</Link>, or browse our other{" "}
+        <Link href="/tools">free tools</Link>.
       </p>
     </ArticleLayout>
   );

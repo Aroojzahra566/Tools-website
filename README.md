@@ -13,7 +13,7 @@ A fast, privacy-friendly website with six browser-based tools:
 | Case Converter | `/case-converter` |
 | Percentage Calculator | `/percentage-calculator` |
 
-Plus `/`, `/tools`, `/blog` (with four guides), `/about`, `/contact`, `/privacy-policy`, `/terms`, `/disclaimer`, a custom 404, `/sitemap.xml`, `/robots.txt` and `/ads.txt`.
+Plus `/`, `/tools`, `/blog` (with five guides), `/about`, `/contact`, `/privacy-policy`, `/terms`, `/disclaimer`, a custom 404, `/sitemap.xml`, `/robots.txt` and `/ads.txt`.
 
 Every tool runs entirely in the browser. There is no backend, database or account system, and user input is never uploaded.
 
@@ -137,7 +137,7 @@ Nobody can guarantee rankings or that Google will index every page, but these st
 1. Go to [Google Search Console](https://search.google.com/search-console) and choose **Add property**.
 2. Pick **Domain** and enter `quicktoolsworld.com`. This covers `www` and non-`www`, and `http` and `https`.
 3. Google shows a `TXT` record. Add it to your DNS at the registrar, wait a few minutes, and select **Verify**.
-4. Open **Indexing → Sitemaps**, enter `sitemap.xml` and select **Submit**. The full address is `https://www.quicktoolsworld.com/sitemap.xml`, and it lists 18 pages: the homepage, all tools, the blog, the four articles and the information pages.
+4. Open **Indexing → Sitemaps**, enter `sitemap.xml` and select **Submit**. The full address is `https://www.quicktoolsworld.com/sitemap.xml`, and it lists 19 pages: the homepage, all tools, the blog, the five articles and the information pages.
 
 If you prefer a **URL prefix** property, you can verify with an HTML meta tag instead. Add the code Google gives you to the `verification` field of the `metadata` export in `app/layout.tsx`, for example `verification: { google: "code-from-search-console" }`. Never commit a made-up code.
 
@@ -199,7 +199,7 @@ Articles are attributed to "QuickToolsWorld" (`author` in `lib/site.ts`). Name a
 
 ### Before publishing the articles
 
-The four articles in `app/blog/` are complete, and their facts and calculations have been checked, but they deserve a human read-through before launch. If you publish on a different day, update `published` and `updated` in `lib/blog.ts` to the real date.
+The articles in `app/blog/` are complete, and their facts and calculations have been checked, but they deserve a human read-through before launch. If you publish on a different day, update `published` and `updated` in `lib/blog.ts` to the real date.
 
 ## Growing traffic responsibly (off-page SEO)
 

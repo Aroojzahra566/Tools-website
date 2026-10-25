@@ -14,6 +14,21 @@ export default function Page() {
       tool={<PasswordGenerator />}
       faqs={[
         {
+          question: "How do I generate a strong password with this tool?",
+          answer:
+            "Leave the length at 16 characters or more, keep all four character types ticked, and select Generate password. Every option change creates a fresh password, so you can try again until a site accepts it. Then copy it into the account you are creating or into your password manager.",
+        },
+        {
+          question: "Can I include symbols, numbers and uppercase letters?",
+          answer:
+            "Yes. Tick any combination of uppercase letters, lowercase letters, numbers and symbols. The generator always includes at least one character from every type you tick, which satisfies most “complex password” rules. If a site rejects some symbols, untick Symbols and make the password longer instead.",
+        },
+        {
+          question: "How do I copy and use the generated password?",
+          answer:
+            "Select Copy password, then paste it into the sign-up or change-password form. Save it in a password manager at the same time, because a random password is hard to remember and this page does not keep a copy once you leave.",
+        },
+        {
           question: "Is it safe to generate a password on a website?",
           answer:
             "This generator runs entirely in your browser. The password is created on your device with the Web Crypto API and is never sent to a server, saved or logged. It exists only on this page until you leave or generate a new one.",
@@ -24,9 +39,9 @@ export default function Page() {
             "Each character is chosen with crypto.getRandomValues(), the browser’s cryptographically secure random number generator. A technique called rejection sampling makes every allowed character equally likely, and the final order is shuffled with the same secure source. Math.random(), which is not designed for security, is never used.",
         },
         {
-          question: "How long should my password be?",
+          question: "Which password length should I choose?",
           answer:
-            "Use at least 16 characters with all four character types for important accounts. When a site limits which symbols you can use, make the password longer instead. Length adds more strength than complexity.",
+            "16 characters, the default here, suits most accounts. Use 20 or 32 for important accounts such as email and banking, and drop to 12 or 8 only when a site won’t accept more. Adding length increases strength more than adding character types.",
         },
         {
           question: "What does the strength estimate mean?",

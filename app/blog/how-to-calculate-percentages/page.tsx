@@ -14,6 +14,7 @@ const s = {
   decrease: "How to calculate a percentage decrease",
   marks: "How to calculate the percentage of marks",
   difference: "How to calculate the percentage difference between two numbers",
+  points: "Percentage change versus percentage points",
   shopping: "Shopping discounts, worked step by step",
   everyday: "Everyday uses",
   calculator: "Using the Percentage Calculator",
@@ -143,9 +144,68 @@ export default function Page() {
         <strong>Formula:</strong> percentage = marks obtained ÷ total marks × 100
       </p>
       <p>
-        This is the “X is what percent of Y” calculation. For one exam, 68 out of 80 is 68 ÷ 80 × 100 = 85%. For a
-        whole result across several subjects, add everything up first:
+        This is the “X is what percent of Y” calculation. For one exam, 68 out of 80 is 68 ÷ 80 × 100 = 85%.
       </p>
+      <h3>Percentage of marks across 6 subjects</h3>
+      <p>
+        For a whole result, add up the marks first, then divide once. Here is a student with six subjects, each marked
+        out of 100:
+      </p>
+      <div className="overflow-x-auto">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Subject</th>
+              <th scope="col">Marks obtained</th>
+              <th scope="col">Maximum marks</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>English</td>
+              <td>78</td>
+              <td>100</td>
+            </tr>
+            <tr>
+              <td>Mathematics</td>
+              <td>85</td>
+              <td>100</td>
+            </tr>
+            <tr>
+              <td>Physics</td>
+              <td>69</td>
+              <td>100</td>
+            </tr>
+            <tr>
+              <td>Chemistry</td>
+              <td>92</td>
+              <td>100</td>
+            </tr>
+            <tr>
+              <td>Biology</td>
+              <td>74</td>
+              <td>100</td>
+            </tr>
+            <tr>
+              <td>Computer science</td>
+              <td>88</td>
+              <td>100</td>
+            </tr>
+            <tr>
+              <th scope="row">Total</th>
+              <td>
+                <strong>486</strong>
+              </td>
+              <td>
+                <strong>600</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>The percentage is 486 ÷ 600 × 100 = 81%.</p>
+      <h3>When subjects have different maximum marks</h3>
+      <p>The same method works when the totals differ. Add everything up first:</p>
       <ol>
         <li>Add the marks you obtained in every subject, for example 847.</li>
         <li>Add the maximum marks for every subject, for example 1,100.</li>
@@ -175,6 +235,28 @@ export default function Page() {
       <p>
         Swapping the two values gives the same answer, which is the point of this formula. Compare that with percentage
         change: going from 40 to 60 is a 50% increase, but going from 60 to 40 is a 33.3% decrease.
+      </p>
+
+      <h2 id="points">{s.points}</h2>
+      <p>
+        When the numbers you are comparing are already percentages, such as interest rates, exam pass rates or survey
+        results, there are two different ways to describe a change, and mixing them up is a common source of confusion.
+      </p>
+      <ul>
+        <li>
+          <strong>Percentage points</strong> are the simple difference between two percentages. If a savings rate rises
+          from 4% to 5%, it has gone up by 5 − 4 = <strong>1 percentage point</strong>.
+        </li>
+        <li>
+          <strong>Percentage change</strong> compares that difference with the starting rate. The same rise is (5 − 4)
+          ÷ 4 × 100 = a <strong>25% increase</strong> in the rate.
+        </li>
+      </ul>
+      <p>
+        Both statements are correct, but they mean different things. Another example: if a school’s pass rate falls
+        from 80% to 72%, it has dropped by 8 percentage points, which is a 10% decrease (8 ÷ 80 × 100). When you read
+        or write about changing rates, check which one is meant. “Percentage points” is the clearer choice when you
+        mean the plain difference.
       </p>
 
       <h2 id="shopping">{s.shopping}</h2>
@@ -253,7 +335,8 @@ export default function Page() {
         </li>
         <li>
           <strong>Confusing percent with percentage points.</strong> An interest rate rising from 4% to 5% has gone up
-          by one percentage point, which is a 25% increase in the rate itself.
+          by one percentage point, which is a 25% increase in the rate itself. See{" "}
+          <a href="#points">percentage change versus percentage points</a> above.
         </li>
         <li>
           <strong>Forgetting to convert.</strong> 15% of 80 is 0.15 × 80, not 15 × 80.
@@ -263,20 +346,31 @@ export default function Page() {
       <ArticleFaq
         items={[
           {
+            q: "How do I solve percentage increase and decrease problems?",
+            a: (
+              <>
+                Find the original value, work out the change, and divide the change by the original. If a price rises
+                from $40 to $50, the change is $10, and 10 ÷ 40 = 0.25, a 25% increase. If it then falls back from $50 to
+                $40, the original is now $50, so 10 ÷ 50 = 0.2, a 20% decrease. The{" "}
+                <Link href="/percentage-calculator">Percentage Calculator</Link> shows the formula for each step.
+              </>
+            ),
+          },
+          {
+            q: "How do I calculate a percentage in my head?",
+            a: "Start from 10%, which you get by moving the decimal point one place left, then build from it. 5% is half of 10%, and 1% is a tenth of it. For 15% of 80: 10% is 8 and 5% is 4, so 15% is 12.",
+          },
+          {
+            q: "What is the difference between percentage change and percentage points?",
+            a: "Percentage points are the plain difference between two percentages: a rate going from 4% to 5% rises by 1 percentage point. Percentage change compares that difference with where you started: the same rise is a 25% increase, because 1 ÷ 4 × 100 = 25.",
+          },
+          {
             q: "How do I calculate a percentage on a phone calculator?",
             a: "Use the decimal form. For 15% of 80, type 0.15 × 80 = 12. For what percent 45 is of 60, type 45 ÷ 60 × 100 = 75. Many calculators also have a % key, but its behavior varies between models.",
           },
           {
             q: "Can a percentage be more than 100%?",
             a: "Yes. A value can grow by more than 100%: going from 50 to 150 is a 200% increase. Something can also be more than 100% of a reference, such as 120% of last year’s sales. A decrease can’t exceed 100% for a quantity that can’t go below zero.",
-          },
-          {
-            q: "What is the difference between percentage change and percentage difference?",
-            a: "Percentage change compares a new value with a specific original value, so the direction matters. Percentage difference compares two values with no clear starting point by dividing their difference by their average, so 40 and 60 differ by 40% whichever comes first.",
-          },
-          {
-            q: "Why can’t I calculate a percentage increase from zero?",
-            a: "The formula divides by the original value, and dividing by zero is undefined. Any increase from zero would be infinitely large in percentage terms, so it is better to describe it as an absolute change.",
           },
           {
             q: "How do I reverse a percentage to find the original number?",
@@ -291,7 +385,8 @@ export default function Page() {
         number as a percentage of another, or measure the change from an original value. Convert percentages to
         decimals, always divide by the right reference value, and remember that zero can’t be a starting point. For
         quick answers with the working shown, use the{" "}
-        <Link href="/percentage-calculator">Percentage Calculator</Link>.
+        <Link href="/percentage-calculator">Percentage Calculator</Link>. You can find our other free calculators and
+        text tools on the <Link href="/tools">tools page</Link>.
       </p>
     </ArticleLayout>
   );

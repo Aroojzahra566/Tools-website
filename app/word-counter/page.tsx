@@ -19,13 +19,27 @@ export default function Page() {
             "It uses your browser’s built-in Unicode word segmentation (Intl.Segmenter). Runs of letters or numbers count as words, and punctuation, spaces and emoji do not. Contractions such as “don’t” count as one word, while hyphenated words such as “well-known” count as two. Different word processors use slightly different rules, so counts may vary by a few words on long documents.",
         },
         {
-          question: "Are spaces and line breaks counted as characters?",
+          question: "Does the character count include spaces?",
           answer:
             "The “Characters” figure includes spaces, tabs and line breaks. “Characters (no spaces)” excludes all whitespace. Emoji and accented letters count as one character each, matching what you see on screen.",
         },
         {
+          question: "How are sentences and paragraphs counted?",
+          answer:
+            "Sentences are found with your browser’s built-in sentence rules, so a sentence usually ends at a full stop, question mark or exclamation mark, including marks such as ۔ or । in other scripts. A line on its own, such as a heading, also counts as one sentence. Every non-empty line counts as a paragraph, so blank lines between paragraphs don’t change the total. Abbreviations like “e.g.” can occasionally split a sentence, so treat the sentence count as a close estimate.",
+        },
+        {
           question: "How is reading time calculated?",
           answer: `Reading time divides the word count by ${READING_WPM} words per minute, a commonly cited average for adults reading non-fiction silently. Speaking time uses ${SPEAKING_WPM} words per minute. Actual speed depends on the reader and how complex the text is.`,
+        },
+        {
+          question: "How long does it take to read 1,000 words?",
+          answer: `About ${Math.round(1000 / READING_WPM)} minutes reading silently at ${READING_WPM} words per minute, and about ${Math.round(1000 / SPEAKING_WPM)} minutes reading aloud at ${SPEAKING_WPM} words per minute. Paste your own text above to see the estimate for its exact length.`,
+        },
+        {
+          question: "How many words is a page?",
+          answer:
+            "As a rough guide, about 500 words for a single-spaced page and about 250 words for a double-spaced page, using a 12-point font and standard margins. The real figure depends on the font, spacing and layout, so check the page count in your word processor when a limit is set in pages.",
         },
         {
           question: "Does it count words in Urdu, Hindi, Arabic or Chinese?",

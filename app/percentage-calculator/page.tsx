@@ -18,6 +18,16 @@ export default function Page() {
             "Divide the percentage by 100 and multiply by the number. For example, 20% of 150 is 0.20 × 150 = 30.",
         },
         {
+          question: "How do I find what percent one number is of another?",
+          answer:
+            "Divide the part by the whole and multiply by 100. For example, 45 out of 60 is 45 ÷ 60 × 100 = 75%. Enter the two numbers in “X is what percent of Y?” to get the answer with its formula.",
+        },
+        {
+          question: "How do I calculate the percentage increase or decrease between two numbers?",
+          answer:
+            "Subtract the original value from the new value, divide by the original value and multiply by 100. From 80 to 100 is (100 − 80) ÷ 80 × 100 = 25% higher; from 100 to 80 is (80 − 100) ÷ 100 × 100 = 20% lower. The two answers differ because each uses a different starting value.",
+        },
+        {
           question: "How do I calculate my percentage of marks?",
           answer:
             "Divide the marks you obtained by the total marks and multiply by 100. For example, 68 out of 80 is 85%. For several subjects, add up all obtained marks and all total marks first: 847 out of 1,100 is 77%.",
@@ -43,9 +53,9 @@ export default function Page() {
             "No. 100 increased by 50% is 150, but 150 decreased by 50% is 75. Each percentage is calculated from a different starting value.",
         },
         {
-          question: "How many decimal places are shown?",
+          question: "Can I calculate percentages with decimals?",
           answer:
-            "Results are rounded to at most six decimal places, with trailing zeros removed. Numbers can include a decimal point and commas as thousands separators, such as 1,250.75.",
+            "Yes. Every field accepts decimals, such as 12.5% of 80 (which is 10), and commas as thousands separators, such as 1,250.75. Results are rounded to at most six decimal places, with trailing zeros removed.",
         },
       ]}
     >

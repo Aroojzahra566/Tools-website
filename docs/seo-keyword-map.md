@@ -56,8 +56,8 @@ Intent key: **T** = transactional (wants to use a tool now), **I** = information
 | Intent | T |
 | Title | Word Counter – Free Online Word & Character Counter |
 | H1 | Free Online Word and Character Counter |
-| Internal links | Case Converter, Password Generator, Percentage Calculator |
-| Gaps | No guide yet. A future article could cover "How long is 1,000 words?" or essay/social-media length limits, if Search Console shows demand. Competitors offer platform presets (tweet/SMS/meta description limits), a possible feature idea. |
+| Internal links | Guide: How to Count Words and Characters…; Case Converter, Password Generator, Percentage Calculator |
+| Gaps | The guide (October 25, 2026) covers length limits and spaces. Keep the tool page focused on the transactional query "word counter online" so the two don't compete. Competitors offer platform presets (tweet/SMS/meta description limits), a possible feature idea. |
 
 ### Image Compressor `/image-compressor`
 
@@ -128,11 +128,26 @@ Intent key: **T** = transactional (wants to use a tool now), **I** = information
 
 | Page | Primary (candidate) | Intent | Links to |
 | --- | --- | --- | --- |
-| `/blog` | QuickToolsWorld guides | I | All four articles, tools |
+| `/blog` | QuickToolsWorld guides | I | All five articles, tools |
 | `/blog/how-to-compress-images-online` | how to compress images online | I | Image Compressor (callout, steps, FAQ, conclusion) |
 | `/blog/how-to-create-a-qr-code` | how to create a QR code | I | QR Code Generator |
 | `/blog/how-to-create-strong-passwords` | how to create a strong password | I | Password Generator |
-| `/blog/how-to-calculate-percentages` | how to calculate percentages | I | Percentage Calculator |
+| `/blog/how-to-calculate-percentages` | how to calculate percentage | I | Percentage Calculator, `/tools` |
+| `/blog/how-to-count-words-and-characters` | how to count words and characters | I | Word Counter, Case Converter, `/tools`, `/blog` |
+
+### Article keyword mapping (updated October 25, 2026)
+
+SC = query seen in Google Search Console (URL-prefix property, October 20–22, 2026, 0 clicks). SS = query from the owner's Search Console screenshot (impressions, not search volume). AC = Google autocomplete suggestion (US, English). No search volumes or difficulty scores were available.
+
+| Article | Primary | Secondary | Evidence |
+| --- | --- | --- | --- |
+| Percentages | how to calculate percentage | percentage of a number, percentage of marks (6 subjects), percentage increase/decrease, percentage difference, percentage points vs percent | SC: "how to calculate percentage of a number", "how to calculate percentage increase between two numbers", "percent increase and decrease problems". AC: the rest |
+| Words and characters | how to count words and characters | character count with/without spaces, do spaces count as characters, sentence and paragraph counter, word limits | AC only. The tool page keeps "word counter online" so the article doesn't compete with it |
+| Strong password | how to create a strong password | create complex password, generate strong password, create secure password, suggest strong password, create a password | SS: create complex password (13), generate strong password (11), create a password (7), create secure password (5), create password, suggest strong password, suggest new password (4 each). SC: "how to let google generate a strong password" |
+| QR code | how to create a QR code | QR code from a link/text, Wi-Fi QR code, static vs dynamic, how to scan, test before printing | SC: "how do i make a qr code", "how to create a dynamic qr code", "qr code for text", "make qr code for link". AC: Wi-Fi, static vs dynamic, test |
+| Images | compress images online | compress JPG/PNG/WebP, reduce photo size, image size for website, lossy vs lossless | AC only |
+
+The suggested new URLs `/blog/how-to-calculate-percentage` and `/blog/how-to-create-a-strong-password` were not created, because they would duplicate the existing articles above and split their ranking signals.
 
 Secondary topics each article covers are listed in its table of contents. Do not create separate pages for small keyword variations (for example "compress JPG" vs "compress JPEG"). They belong on the existing page.
 

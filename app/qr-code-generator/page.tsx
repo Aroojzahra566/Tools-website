@@ -13,24 +13,34 @@ export default function Page() {
       tool={<QrCodeGenerator />}
       faqs={[
         {
-          question: "Do these QR codes expire?",
+          question: "How do I create a QR code for a link?",
           answer:
-            "No. These are static QR codes: the text or URL is stored directly in the pattern, so the code keeps working for as long as the content it points to exists. There is no service in between that could be switched off.",
+            "Copy the full web address, including “https://”, and paste it into the box. Select Generate QR code, check the preview, then download it. Scan the downloaded image with your phone to confirm it opens the right page before you print or share it.",
         },
         {
-          question: "Can I change where the QR code points after printing it?",
+          question: "What can I put in a QR code?",
           answer:
-            "No. Changing the destination later requires a “dynamic” QR code, which points to a redirect service you control. This tool does not offer dynamic codes. If you may need to change the destination, encode a link on your own website that you can redirect yourself.",
+            "Any text up to 2,331 bytes: a website link, a short message, a reference number, an email link such as mailto:hello@example.com or a phone link such as tel:+15551234567. Most letters use one byte, while accented letters and emoji use two to four. Shorter content gives a simpler code that scans more easily.",
+        },
+        {
+          question: "How do I download my QR code?",
+          answer:
+            "Select Download PNG. The image is saved as qr-code.png at the size you chose. If you change the text, size or colors afterwards, select Generate QR code again so the download matches your new settings.",
+        },
+        {
+          question: "Can I change the size and colors?",
+          answer:
+            "Yes. Choose a size from 128 to 1,024 pixels and pick any foreground and background color. The tool warns you when the contrast is too low for reliable scanning. A dark code on a light background works best, and 768 pixels or more is a good size for print.",
+        },
+        {
+          question: "Do these QR codes expire?",
+          answer:
+            "No. These are static QR codes: the text or URL is stored directly in the pattern, so the code keeps working for as long as the content it points to exists. There is no service in between that could be switched off. The trade-off is that you can’t change the destination after printing; you would need to generate a new code.",
         },
         {
           question: "Do you track scans of my QR code?",
           answer:
             "No. The code contains exactly what you typed, with no tracking link or redirect added, so scans go straight to your content and we never see them.",
-        },
-        {
-          question: "How much text can a QR code hold?",
-          answer:
-            "This generator accepts up to 2,331 bytes, the maximum for the error-correction level it uses. Most letters and numbers use one byte, while accented letters and emoji use two to four. Shorter content produces a simpler code that is easier to scan.",
         },
         {
           question: "Why won’t my QR code scan?",

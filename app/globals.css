@@ -170,6 +170,13 @@ body {
   .prose-content code {
     @apply rounded bg-surface px-1.5 py-0.5 font-mono text-[0.9em] text-ink-900;
   }
+  /* Multi-line text samples. Wraps instead of scrolling so phones never get a sideways scroll. */
+  .prose-content pre {
+    @apply my-6 rounded-xl border border-line bg-surface px-5 py-4 font-mono text-[0.9em] leading-relaxed wrap-anywhere whitespace-pre-wrap text-ink-900;
+  }
+  .prose-content pre code {
+    @apply bg-transparent p-0 text-[1em];
+  }
 }
 
 @keyframes fade-in {

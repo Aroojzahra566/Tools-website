@@ -11,11 +11,14 @@ const s = {
   how: "How QR codes store information",
   url: "How to create a QR code from a link",
   text: "How to create a QR code from plain text",
+  wifi: "How to create a QR code for Wi-Fi",
   download: "Downloading your QR code",
   size: "Choosing the right size",
   contrast: "Why contrast and the quiet zone matter",
   test: "How to test a QR code before sharing it",
+  features: "What our QR code generator can and can’t do",
   static: "Static versus dynamic QR codes",
+  uses: "Where to use QR codes",
   safety: "Privacy and safety",
   mistakes: "Common mistakes",
   faq: "Frequently asked questions",
@@ -78,9 +81,20 @@ export default function Page() {
           <strong>Text or URL</strong> box.
         </li>
         <li>
+          Set the <strong>Size</strong> slider. The default of 512 × 512 pixels suits screens and small prints; move it
+          up to 1024 for larger prints.
+        </li>
+        <li>
+          Optionally, choose <strong>Foreground</strong> and <strong>Background</strong> colors. Keep the foreground
+          dark and the background light.
+        </li>
+        <li>
           Select <strong>Generate QR code</strong>. The preview appears on the right, or below on a phone.
         </li>
         <li>Scan the preview with your phone camera and make sure it opens the right page.</li>
+        <li>
+          Select <strong>Download PNG</strong> to save the image.
+        </li>
       </ol>
       <p>
         Including <code>https://</code> matters. Without it, some scanners treat the content as plain text instead of a
@@ -108,6 +122,37 @@ export default function Page() {
         The generator accepts up to 2,331 bytes, the most a QR code can hold at this error-correction level. Most
         letters take one byte, but accented letters, other alphabets and emoji take two to four bytes each. A live
         counter shows how much space you have used.
+      </p>
+
+      <h2 id="wifi">{s.wifi}</h2>
+      <p>
+        Phones recognise a special text format for Wi-Fi details. Scanning a code that contains it offers to join the
+        network without typing the password. Type the details into the generator in this form, replacing the network
+        name and password with your own:
+      </p>
+      <pre>
+        <code>WIFI:T:WPA;S:MyNetwork;P:MyPassword;;</code>
+      </pre>
+      <ul>
+        <li>
+          <code>T</code> is the security type: <code>WPA</code> for WPA, WPA2 and most WPA3 home networks, or{" "}
+          <code>nopass</code> for an open network.
+        </li>
+        <li>
+          <code>S</code> is the network name exactly as it appears, including capital letters.
+        </li>
+        <li>
+          <code>P</code> is the Wi-Fi password.
+        </li>
+        <li>
+          If the name or password contains <code>;</code>, <code>,</code>, <code>:</code>, <code>\</code> or{" "}
+          <code>&quot;</code>, put a backslash before that character, for example <code>Cafe\;Guest</code>.
+        </li>
+      </ul>
+      <p>
+        Most current iPhone and Android camera apps recognise this format, but test the code on the phones your guests
+        are likely to use. Remember that anyone who can see the code can join the network, so only print codes for a
+        guest network you are happy to share.
       </p>
 
       <h2 id="download">{s.download}</h2>
@@ -161,6 +206,64 @@ export default function Page() {
         <li>Recheck the code after any design changes, such as new colors or a different size.</li>
       </ul>
 
+      <h2 id="features">{s.features}</h2>
+      <p>
+        Our <Link href="/qr-code-generator">QR Code Generator</Link> is deliberately simple. Here is exactly what it
+        offers, so you can decide whether it suits your project:
+      </p>
+      <div className="overflow-x-auto">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Feature</th>
+              <th scope="col">Supported?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Links, plain text and special formats such as Wi-Fi, email and phone</td>
+              <td>Yes, up to 2,331 bytes</td>
+            </tr>
+            <tr>
+              <td>Image size</td>
+              <td>Yes, 128 to 1024 pixels square</td>
+            </tr>
+            <tr>
+              <td>Custom foreground and background colors</td>
+              <td>Yes, with a warning for low contrast</td>
+            </tr>
+            <tr>
+              <td>PNG download</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>SVG or PDF download</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>Logo in the middle of the code</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>Dynamic codes (change the destination later)</td>
+              <td>No, codes are static</td>
+            </tr>
+            <tr>
+              <td>Scan tracking or analytics</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>Expiry date</td>
+              <td>None. The codes keep working as long as the content they point to does</td>
+            </tr>
+            <tr>
+              <td>Account or sign-up</td>
+              <td>Not needed</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
       <h2 id="static">{s.static}</h2>
       <p>
         A <strong>static</strong> QR code stores your content directly in its pattern. It works without any service in
@@ -177,9 +280,44 @@ export default function Page() {
         website. You can then update that page, or redirect it, whenever you like.
       </p>
 
+      <h2 id="uses">{s.uses}</h2>
+      <p>
+        QR codes work best when someone has a phone in hand and a reason to act straight away. Some common uses, with a
+        tip for each:
+      </p>
+      <ul>
+        <li>
+          <strong>Restaurant menus and table cards:</strong> link to a mobile-friendly menu page, not a large PDF that
+          is hard to read on a phone.
+        </li>
+        <li>
+          <strong>Business cards:</strong> link to your website or a contact page. Keep the code at least about 2 cm
+          wide, and test it on the printed card.
+        </li>
+        <li>
+          <strong>Posters and flyers:</strong> add a short line telling people what they will get, such as “Scan to book
+          a place”. Size the code for the distance people will scan from.
+        </li>
+        <li>
+          <strong>Product packaging and labels:</strong> link to instructions, ingredients or a warranty page. Plain-text
+          codes work for serial numbers.
+        </li>
+        <li>
+          <strong>Events:</strong> link to a schedule, map or registration form.
+        </li>
+        <li>
+          <strong>Presentations and documents:</strong> let people open a link on their phone instead of typing it from
+          a slide. See the FAQ below for adding a code to Word, Canva or PowerPoint.
+        </li>
+        <li>
+          <strong>Guest Wi-Fi:</strong> use the Wi-Fi format above so visitors can join without typing a password.
+        </li>
+      </ul>
+
       <h2 id="safety">{s.safety}</h2>
       <p>
-        Anyone who scans a QR code can read its content, so never put passwords, private notes or other secrets in one.
+        Anyone who scans a QR code can read its content, so never put private passwords, notes or other secrets in one.
+        A guest Wi-Fi code is the exception, because sharing that password is the point.
         A static code also has no expiry, so anything you print stays readable for as long as the paper survives.
       </p>
       <p>
@@ -222,30 +360,43 @@ export default function Page() {
       <ArticleFaq
         items={[
           {
-            q: "Do QR codes expire?",
-            a: "Static QR codes don’t expire. They keep working as long as the content they contain is still valid, for example as long as the linked web page exists. Dynamic codes can stop working if the redirect service ends.",
+            q: "How do I create a dynamic QR code?",
+            a: "You need a dynamic QR code service. It encodes a short link that it controls, so you can change the destination and count scans later, usually with an account or subscription. The code stops working if that service closes or your plan ends. QuickToolsWorld makes static codes only. For a free alternative you can still edit, encode a link on your own website and redirect it wherever you need.",
           },
           {
-            q: "Can I change where my QR code points after printing it?",
-            a: "Not with a static code. The content is part of the pattern itself. To change the destination, generate a new code, or link to a page on your own site that you can redirect.",
+            q: "How do I scan a QR code?",
+            a: "Open your phone’s camera app, point it at the code and tap the link or text that appears. Most iPhones and Android phones support this without an extra app. To scan a QR code in a saved photo or screenshot, use Google Lens on Android or the Photos app on iPhone.",
           },
           {
-            q: "Can I track how many people scan my QR code?",
-            a: "Not with a static code, because no server is involved when it is scanned. You can still measure visits to the linked page with your own website analytics, for example by adding campaign parameters to the URL before generating the code.",
+            q: "Can I make a QR code for plain text instead of a link?",
+            a: "Yes. Type any text and the code will contain it exactly. When scanned, the phone simply shows the text, which is useful for reference numbers, short instructions or a note on a label. Don’t put passwords or other secrets in a QR code, because anyone who scans it can read it.",
           },
           {
-            q: "Is it free to use QR codes commercially?",
+            q: "How do I add a QR code to Word, Canva or PowerPoint?",
             a: (
               <>
-                The codes you create with the <Link href="/qr-code-generator">QuickToolsWorld generator</Link> are free
-                to use, including on printed materials. Denso Wave has said it does not exercise its patent rights for
-                standard QR codes. If you use the name “QR Code” in your own products, follow its trademark guidance.
+                Download the code as a PNG from the <Link href="/qr-code-generator">QR Code Generator</Link>, then
+                insert it like any other picture: Insert → Pictures in Word or PowerPoint, or Uploads in Canva. Resize it
+                by dragging a corner so it stays square, keep the white margin around it, and scan the final document or
+                printout before you share it.
               </>
             ),
           },
           {
-            q: "Why won’t my QR code scan?",
-            a: "The most common causes are low contrast, inverted colors, a cropped margin, printing too small for the scanning distance, or blurring from enlargement or JPEG compression. Regenerate with default colors and a larger size, then test again.",
+            q: "How do I make a QR code for Wi-Fi?",
+            a: (
+              <>
+                Type your network details in the Wi-Fi format, for example WIFI:T:WPA;S:MyNetwork;P:MyPassword;;
+                (replacing the network name and password), into the{" "}
+                <Link href="/qr-code-generator">QR Code Generator</Link>, then generate and download the code. Most
+                current phone cameras offer to join the network when they scan it. Test it first, and only share codes
+                for a network you are happy for anyone who sees the code to use.
+              </>
+            ),
+          },
+          {
+            q: "Can I track how many people scan my QR code?",
+            a: "Not with a static code, because no server is involved when it is scanned. You can still measure visits to the linked page with your own website analytics, for example by adding campaign parameters to the URL before generating the code.",
           },
         ]}
       />
@@ -255,7 +406,9 @@ export default function Page() {
         Creating a QR code is quick. Making one that works every time takes a little care: encode the exact URL with{" "}
         <code>https://</code>, choose a size suited to where it will appear, keep dark modules on a light background
         with an intact quiet zone, and test it on real phones. Ready to make yours? Open the{" "}
-        <Link href="/qr-code-generator">QR Code Generator</Link>.
+        <Link href="/qr-code-generator">QR Code Generator</Link>. If the code will appear next to a photo on a website
+        or flyer, our guide to <Link href="/blog/how-to-compress-images-online">compressing images</Link> helps keep
+        the page fast.
       </p>
     </ArticleLayout>
   );

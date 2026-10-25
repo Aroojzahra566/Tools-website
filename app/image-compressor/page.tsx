@@ -24,6 +24,11 @@ export default function Page() {
             "Targets use 1 KB = 1,000 bytes, so “under 100 KB” means at most 100,000 bytes. The size display counts 1 KB as 1,024 bytes, so 100,000 bytes appears as 97.7 KB. This way the file is accepted by forms that use either definition.",
         },
         {
+          question: "Does compressing an image reduce its quality?",
+          answer:
+            "JPEG and WebP compression removes some fine detail, but at quality settings around 70–85% the difference is usually hard to see. PNG output is lossless, so quality is unchanged and only resizing makes it smaller. After compressing, drag the before-and-after slider over the preview to check the result at full size before you download.",
+        },
+        {
           question: "Are my images uploaded to a server?",
           answer:
             "No. Your browser decodes and re-encodes the image on your device using the Canvas API. The file never leaves your computer or phone.",
@@ -44,8 +49,8 @@ export default function Page() {
             "Yes. Re-encoding through a canvas does not copy EXIF metadata such as camera details or GPS location into the new file. The image is rotated correctly before saving, so photos stay the right way up.",
         },
         {
-          question: "What is the largest image I can compress?",
-          answer: `Files up to ${formatBytes(MAX_FILE_BYTES)} are accepted. Images above about 16.7 megapixels are scaled down automatically to stay within browser memory limits, and the tool tells you when this happens.`,
+          question: "Which image files can I compress?",
+          answer: `JPEG, PNG and WebP files up to ${formatBytes(MAX_FILE_BYTES)}, on a computer or in your phone’s browser. Other formats, such as HEIC photos or GIFs, aren’t supported, so convert them to JPEG first. Images above about 16.7 megapixels are scaled down automatically to stay within browser memory limits, and the tool tells you when this happens.`,
         },
         {
           question: "Which output format should I choose?",

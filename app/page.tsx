@@ -89,7 +89,7 @@ const faqs: FaqItem[] = [
       "Current versions of Chrome, Edge, Firefox and Safari. Some options, such as WebP output in the Image Compressor, depend on your browser, and the tool tells you when one is unavailable.",
   },
   {
-    question: "How can I contact the website?",
+    question: "How do I report a problem or suggest a new tool?",
     answer: (
       <>
         Use the{" "}
@@ -254,7 +254,7 @@ export default function HomePage() {
             <ArrowRight className="size-4" aria-hidden="true" />
           </Link>
         </div>
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {posts.map((post) => (
             <PostCard key={post.slug} post={post} />
           ))}
