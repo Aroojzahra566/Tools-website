@@ -84,6 +84,11 @@ export default function Page() {
         Your original text is never changed by switching styles, so you can compare all four before copying. To check
         the length of your text, use the <Link href="/word-counter">Word Counter</Link>.
       </p>
+      <p>
+        For examples of each style, how title case rules differ between APA, AP and Chicago, and how to change case in
+        Word, Google Docs and Excel, read{" "}
+        <Link href="/blog/what-is-a-capitalization-converter">what a capitalization converter does</Link>.
+      </p>
     </ToolPage>
   );
 }

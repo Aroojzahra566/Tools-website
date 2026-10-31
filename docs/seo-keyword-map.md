@@ -128,10 +128,14 @@ Intent key: **T** = transactional (wants to use a tool now), **I** = information
 
 | Page | Primary (candidate) | Intent | Links to |
 | --- | --- | --- | --- |
-| `/blog` | QuickToolsWorld guides | I | All five articles, tools |
+| `/blog` | QuickToolsWorld guides | I | All nine articles (newest first), tools |
 | `/blog/how-to-compress-images-online` | how to compress images online | I | Image Compressor (callout, steps, FAQ, conclusion) |
 | `/blog/how-to-create-a-qr-code` | how to create a QR code | I | QR Code Generator |
-| `/blog/how-to-create-strong-passwords` | how to create a strong password | I | Password Generator |
+| `/blog/how-to-create-strong-passwords` | create strong password | I (step-by-step tutorial) | Password Generator, the other three password articles, QR article (Wi-Fi), `/tools` |
+| `/blog/how-to-generate-a-strong-password` | generate strong password | I/T (using a generator) | Password Generator, other password articles, `/tools` |
+| `/blog/how-to-create-a-secure-password` | create secure password | I (account protection) | Password Generator, strong and generate articles, `/tools` |
+| `/blog/strong-password-examples-and-suggestions` | suggest strong password | I (what a strong password looks like, getting suggestions) | Password Generator, other password articles, `/tools` |
+| `/blog/what-is-a-capitalization-converter` | capitalization converter | I | Case Converter, Word Counter, `/tools` |
 | `/blog/how-to-calculate-percentages` | how to calculate percentage | I | Percentage Calculator, `/tools` |
 | `/blog/how-to-count-words-and-characters` | how to count words and characters | I | Word Counter, Case Converter, `/tools`, `/blog` |
 
@@ -151,10 +155,28 @@ The suggested new URLs `/blog/how-to-calculate-percentage` and `/blog/how-to-cre
 
 Secondary topics each article covers are listed in its table of contents. Do not create separate pages for small keyword variations (for example "compress JPG" vs "compress JPEG"). They belong on the existing page.
 
+### Password and capitalization articles (added October 31, 2026)
+
+Evidence: Search Console URL-prefix property, last 28 days to October 28, 2026 (988 impressions, 1 click, 262 queries). Figures are impressions, not search volume. AC = Google autocomplete (US, English), October 31, 2026. Before these articles, `/blog/how-to-create-strong-passwords` received 525 of the 988 impressions, mostly for the password queries below, so its URL was kept.
+
+| Article | Primary | Secondary and long-tail | Evidence |
+| --- | --- | --- | --- |
+| How to Generate a Strong Password | generate strong password | generate secure password, strong random password, password length (8/12/14/16/20), symbols, generate password based on word, easy to remember | SC: generate strong password (59), generate password based on word (35), generate secure password (25), strong random password (7), 16 character password generator (1). AC: "… 8/14/16 characters", "… easy to remember", "… for me" |
+| How to Create a Secure Password | create secure password | secure password, password manager, password reuse, MFA, phishing, breach, change passwords | SC: create secure password (39), secure password (4), how to make a secure password (3), create a secure password (2), creating secure passwords (2). AC: "secure password manager", "creating secure passwords you can remember" |
+| Strong Password Examples and Suggestions | suggest strong password | strong password examples, suggested passwords, suggest new password, Chrome/iPhone suggestions, suggestion not showing, good passwords | SC: suggest strong password (39), suggested passwords (24), good passwords (4), suggest new password (4), suggest a strong password (2). AC: "… google not showing", "… chrome", "… iphone", "strong password examples easy to remember" |
+| How to Create a Strong Password (existing URL) | create strong password | create a strong password, create complex password, create a password, passphrase, unique passwords, password I can remember | SC: create strong password (37), create a strong password (35), create a password (27), create complex password (27), how to create a strong password (11). AC: "… that I can remember", "… with numbers letters and symbols" |
+| What Is a Capitalization Converter? | capitalization converter | convert uppercase to lowercase, lowercase to uppercase, title case, sentence case, title vs sentence case, APA | SC: capitalization converter (29), title case converter uk (5), upper word converter (1), caps converter (1). AC: "title case vs sentence case", "what is title case in apa", "convert uppercase to lowercase in word/excel" |
+
+Cannibalization controls: each password article has a different job (tutorial, generator settings, account security, examples and browser suggestions), a different H1, introduction, tables and FAQ set, and shares under 0.5% of its 8-word phrases with any other. Each links to the others where the reader needs that topic rather than repeating it. The capitalization article explains the topic; the `/case-converter` tool page stays the target for "case converter" tool searches.
+
+The suggested URL `/blog/how-to-create-a-strong-password` was not created; the "create strong password" article remains at `/blog/how-to-create-strong-passwords`, which already ranks for those queries.
+
 ## Internal linking rules
 
 - Homepage → all tools, `/blog` and each article.
-- Each tool page → breadcrumb, related tools, "Browse all tools" (`/tools`), and its guide where one exists.
+- Each tool page → breadcrumb, related tools, "Browse all tools" (`/tools`), and its guides (one "Read the guides" box listing all of them) plus contextual links in the body.
 - Each article → its tool near the top (callout), within the step-by-step instructions, in the FAQ where useful, and in the conclusion; plus "More guides".
+- "More guides" under each article → other guides for the same tool first, then the newest guides for other tools (up to six).
+- Homepage → the newest guide for each tool (six cards) and "Visit the blog".
 - Header and footer → Home, All Tools, Blog, About, Contact; footer also links every tool and legal page.
 - Use normal `<a href>` links with short, descriptive anchor text. No keyword-stuffed anchors.

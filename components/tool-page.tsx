@@ -84,26 +84,31 @@ export function ToolPage({
 
         <div className="mx-auto mt-14 max-w-3xl">
           <div className="prose-content">{children}</div>
-          {guides.map((guide) => (
-            <aside
-              key={guide.slug}
-              className="mt-10 flex gap-4 rounded-2xl border border-lilac-100 bg-lilac-50/60 p-5 sm:p-6"
-            >
+          {guides.length > 0 && (
+            <aside className="mt-10 flex gap-4 rounded-2xl border border-lilac-100 bg-lilac-50/60 p-5 sm:p-6">
               <BookOpen className="mt-0.5 size-5 shrink-0 text-lilac-600" aria-hidden="true" />
-              <div>
-                <p className="text-sm font-semibold tracking-wide text-lilac-600 uppercase">Read the guide</p>
-                <p className="mt-1 font-semibold text-ink-900">
-                  <Link
-                    href={postPath(guide.slug)}
-                    className="underline decoration-lilac-300 underline-offset-4 hover:text-brand-600"
-                  >
-                    {guide.title}
-                  </Link>
+              <div className="min-w-0">
+                <p className="text-sm font-semibold tracking-wide text-lilac-600 uppercase">
+                  {guides.length === 1 ? "Read the guide" : "Read the guides"}
                 </p>
-                <p className="mt-1 text-sm leading-relaxed text-ink-700">{guide.description}</p>
+                <ul className={guides.length === 1 ? "" : "mt-1 divide-y divide-lilac-100"}>
+                  {guides.map((guide) => (
+                    <li key={guide.slug} className={guides.length === 1 ? "" : "py-3 last:pb-0"}>
+                      <p className="mt-1 font-semibold text-ink-900">
+                        <Link
+                          href={postPath(guide.slug)}
+                          className="underline decoration-lilac-300 underline-offset-4 hover:text-brand-600"
+                        >
+                          {guide.title}
+                        </Link>
+                      </p>
+                      <p className="mt-1 text-sm leading-relaxed text-ink-700">{guide.description}</p>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </aside>
-          ))}
+          )}
           <div className="mt-14">
             <Faq items={faqs} />
           </div>

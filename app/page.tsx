@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Gauge, LockKeyhole, MousePointerClick, UserRoundX, Wallet } from "lucide-react";
 import { ToolFinder } from "@/components/tool-finder";
 import { PostCard } from "@/components/blog/post-card";
-import { posts } from "@/lib/blog";
+import { latestPostPerTool } from "@/lib/blog";
 import { ArrowRight } from "lucide-react";
 import { ToolLogo } from "@/components/tool-logo";
 import { Faq, type FaqItem } from "@/components/ui/faq";
@@ -255,7 +255,7 @@ export default function HomePage() {
           </Link>
         </div>
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {posts.map((post) => (
+          {latestPostPerTool().map((post) => (
             <PostCard key={post.slug} post={post} />
           ))}
         </div>

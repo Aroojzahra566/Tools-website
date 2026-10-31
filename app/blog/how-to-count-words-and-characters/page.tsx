@@ -345,7 +345,9 @@ export default function Page() {
       <p>
         Need to fix capitalization while you edit, such as a heading typed with Caps Lock on? The{" "}
         <Link href="/case-converter">Case Converter</Link> changes text to sentence case, title case, uppercase or
-        lowercase in one click. You can find every free tool on the <Link href="/tools">tools page</Link>.
+        lowercase in one click, and our guide to{" "}
+        <Link href="/blog/what-is-a-capitalization-converter">capitalization styles</Link> explains when to use each.
+        You can find every free tool on the <Link href="/tools">tools page</Link>.
       </p>
 
       <ArticleFaq

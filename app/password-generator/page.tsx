@@ -94,8 +94,9 @@ export default function Page() {
         <li><strong>20 or more:</strong> for email, banking and your password manager, or whenever you’re storing the password rather than typing it.</li>
       </ul>
       <p>
-        Use the length buttons above the slider to switch quickly. For more detail, read our guide on{" "}
-        <Link href="/blog/how-to-create-strong-passwords">how to create strong passwords</Link>.
+        Use the length buttons above the slider to switch quickly. Our guide to{" "}
+        <Link href="/blog/how-to-generate-a-strong-password">generating a strong password</Link> compares each
+        length and explains when symbols matter.
       </p>
 
       <h2>Good password habits</h2>
@@ -105,6 +106,14 @@ export default function Page() {
         <li>Turn on two-factor authentication for email, banking and social media accounts.</li>
         <li>Change a password promptly if a service tells you it has been involved in a data breach.</li>
       </ul>
+      <p>
+        Need a password you can remember? Follow our{" "}
+        <Link href="/blog/how-to-create-strong-passwords">step-by-step guide to creating a strong password</Link>,
+        including random passphrases. To see what good and bad passwords look like, browse these{" "}
+        <Link href="/blog/strong-password-examples-and-suggestions">strong password examples</Link>, and for
+        password managers, multifactor authentication and phishing, read{" "}
+        <Link href="/blog/how-to-create-a-secure-password">how to create a secure password</Link>.
+      </p>
       <p>
         Need to share a Wi-Fi password with guests? You can turn it into a scannable code with the{" "}
         <Link href="/qr-code-generator">QR Code Generator</Link>.

@@ -47,13 +47,13 @@ export const posts: readonly Post[] = [
   },
   {
     slug: "how-to-create-strong-passwords",
-    title: "How to Create a Strong Password and Keep It Secure",
-    metaTitle: "How to Create a Strong Password and Keep It Secure",
+    title: "How to Create a Strong Password: A Step-by-Step Guide",
+    metaTitle: "How to Create a Strong Password: A Step-by-Step Guide",
     description:
-      "Learn how to create a strong, complex password, how random generators and browser suggestions work, and how to store and protect every password.",
+      "Create a strong password step by step, by hand or with a generator: random passphrases, length, site password rules and a unique password for each account.",
     published: "2026-10-22",
-    updated: "2026-10-25",
-    readingMinutes: 9,
+    updated: "2026-10-31",
+    readingMinutes: 7,
     tool: "password-generator",
   },
   {
@@ -78,6 +78,50 @@ export const posts: readonly Post[] = [
     readingMinutes: 8,
     tool: "word-counter",
   },
+  {
+    slug: "how-to-generate-a-strong-password",
+    title: "How to Generate a Strong Password, and Which Settings to Use",
+    metaTitle: "How to Generate a Strong Password: Length and Settings",
+    description:
+      "Generate a strong random password in seconds: which length and character types to choose, how generators work, and how to copy and store the result safely.",
+    published: "2026-10-31",
+    updated: "2026-10-31",
+    readingMinutes: 7,
+    tool: "password-generator",
+  },
+  {
+    slug: "how-to-create-a-secure-password",
+    title: "How to Create a Secure Password and Protect Your Accounts",
+    metaTitle: "How to Create a Secure Password and Protect Your Accounts",
+    description:
+      "A secure password is strong, unique and well protected. Learn how passwords get stolen and how password managers, MFA and breach checks keep accounts safe.",
+    published: "2026-10-31",
+    updated: "2026-10-31",
+    readingMinutes: 8,
+    tool: "password-generator",
+  },
+  {
+    slug: "strong-password-examples-and-suggestions",
+    title: "Strong Password Examples and Suggestions: What a Good Password Looks Like",
+    metaTitle: "Strong Password Suggestions and Examples to Learn From",
+    description:
+      "See what strong and weak passwords look like, why predictable patterns fail, and how to get a strong password suggestion from Chrome, iPhone or a generator.",
+    published: "2026-10-31",
+    updated: "2026-10-31",
+    readingMinutes: 6,
+    tool: "password-generator",
+  },
+  {
+    slug: "what-is-a-capitalization-converter",
+    title: "What Is a Capitalization Converter? Uppercase, Lowercase, Title and Sentence Case",
+    metaTitle: "Capitalization Converter: Uppercase, Lowercase, Title Case",
+    description:
+      "What a capitalization converter does, how to convert uppercase to lowercase and back, and when to use title case or sentence case, with real examples.",
+    published: "2026-10-31",
+    updated: "2026-10-31",
+    readingMinutes: 7,
+    tool: "case-converter",
+  },
 ];
 
 export function getPost(slug: string): Post {
@@ -88,6 +132,29 @@ export function getPost(slug: string): Post {
 
 export function postPath(slug: string): string {
   return `/blog/${slug}`;
+}
+
+/** Newest first, for listings. Posts published on the same day keep their registry order. */
+export function postsByDate(): Post[] {
+  return [...posts].sort((a, b) => b.published.localeCompare(a.published));
+}
+
+/** The newest guide for each tool, for compact listings such as the homepage. */
+export function latestPostPerTool(): Post[] {
+  const seen = new Set<ToolSlug>();
+  return postsByDate().filter((p) => !seen.has(p.tool) && (seen.add(p.tool), true));
+}
+
+/**
+ * Related articles: other guides for the same tool first, then the newest
+ * guides for other tools, up to `limit`.
+ */
+export function relatedPosts(slug: string, limit = 6): Post[] {
+  const post = getPost(slug);
+  const others = postsByDate().filter((p) => p.slug !== slug);
+  const sameTool = others.filter((p) => p.tool === post.tool);
+  const rest = others.filter((p) => p.tool !== post.tool);
+  return [...sameTool, ...rest].slice(0, limit);
 }
 
 /** Guides that explain a given tool (used for links from tool pages). */

@@ -96,7 +96,8 @@ export default function AboutPage() {
         <Link href="/blog/how-to-compress-images-online">compress images</Link>,{" "}
         <Link href="/blog/how-to-create-a-qr-code">create a QR code</Link>,{" "}
         <Link href="/blog/how-to-create-strong-passwords">make strong passwords</Link> and{" "}
-        <Link href="/blog/how-to-calculate-percentages">calculate percentages</Link>.
+        <Link href="/blog/how-to-calculate-percentages">calculate percentages</Link>, and what a{" "}
+        <Link href="/blog/what-is-a-capitalization-converter">capitalization converter</Link> does.
       </p>
 
       <h2>What we care about</h2>

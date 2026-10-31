@@ -2,18 +2,19 @@ import Link from "next/link";
 import { PostCard } from "@/components/blog/post-card";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { JsonLd } from "@/components/ui/json-ld";
-import { postPath, posts } from "@/lib/blog";
+import { postPath, postsByDate } from "@/lib/blog";
 import { pageMetadata } from "@/lib/metadata";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 
 export const metadata = pageMetadata({
   title: "Blog: Guides for Everyday Online Tasks",
   description:
-    "Practical guides to counting words, compressing images, creating QR codes, making strong passwords and calculating percentages, with worked examples.",
+    "Practical guides to strong passwords, counting words, changing text case, compressing images, creating QR codes and calculating percentages.",
   path: "/blog",
 });
 
 export default function BlogPage() {
+  const posts = postsByDate();
   return (
     <>
       <JsonLd

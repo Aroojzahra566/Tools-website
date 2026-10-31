@@ -5,7 +5,7 @@ import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { JsonLd } from "@/components/ui/json-ld";
 import { PostCard } from "./post-card";
 import { ToolCallout } from "./tool-callout";
-import { formatDate, getPost, postPath, posts } from "@/lib/blog";
+import { formatDate, getPost, postPath, relatedPosts } from "@/lib/blog";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 import { faqPageData } from "@/lib/structured-data";
 
@@ -22,7 +22,7 @@ export interface TocItem {
 export function ArticleLayout({ slug, toc, children }: { slug: string; toc: TocItem[]; children: ReactNode }) {
   const post = getPost(slug);
   const url = absoluteUrl(postPath(slug));
-  const related = posts.filter((p) => p.slug !== slug);
+  const related = relatedPosts(slug);
   const updated = post.updated !== post.published;
 
   return (
